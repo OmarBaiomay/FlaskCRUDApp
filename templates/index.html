@@ -1,16 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flask App</title>
+{% extends 'base.html' %}
 
-    <!-- <link rel="stylesheet" href="../static/assets/css/style.min.css"> -->
-    <link rel="stylesheet" href="{{url_for('static', filename='assets/css/style.min.css')}}">
-</head>
-<body>
-    
-    <h1>Hello World</h1>
+{%block head%}
 
-</body>
-</html>
+<title>Flask App</title>
+
+{% endblock %}
+
+{% block body %} 
+
+<div class="container">
+    <div class="add-new-wrapper">
+        <form>
+            <input type="text" name="content" id="content">
+            <input type="submit" value="Add New" id="btn-add">
+        </form>
+    </div>
+    <div class="tasks-wrapper">
+        <div class="task">
+            <div class="task-content">
+                <input type="checkbox">
+                <p>Make CRUD App</p>
+            </div>
+            <div class="actions">
+                <button class="btn btn-update">Edit</button>
+                <button class="btn btn-delete">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
